@@ -1,3 +1,5 @@
+import random
+
 print('Задача 30', '=' * 40)
 # Задача 30: Заполните массив элементами арифметической прогрессии. Её первый элемент, разность и количество элементов
 # нужно ввести с клавиатуры. Формула для получения n-го члена прогрессии: an = a1 + (n-1) * d.
@@ -28,7 +30,7 @@ def task_30():
     arithmetic_sequence = make_arithmetic_sequence(first_element, length, coefficient_d)
     print(arithmetic_sequence)
 
-task_30()
+# task_30()
 print()
 
 print('Задача 32', '=' * 40)
@@ -38,3 +40,28 @@ print('Задача 32', '=' * 40)
 # 5
 # 15
 # Вывод: [1, 9, 13, 14, 19]
+
+def get_random_array(array_len):
+    return [random.randint(0, 10) for x in range(array_len)]
+
+
+def get_subarray(array, min_index, max_index):
+    if min_index > len(array):
+        return []
+    if min_index < 0:
+        min_index = 0
+    if max_index > len(array):
+        max_index = len(array)
+    return array[min_index: max_index]
+
+
+def task_32():
+    array = get_random_array(20)
+    print(array)
+    min_index = get_number_from_console('Введите минимальный индекс: ')
+    max_index = get_number_from_console('Введите максимальный индекс: ')
+
+    result = get_subarray(array, min_index, max_index)
+    print(result)
+
+task_32()
