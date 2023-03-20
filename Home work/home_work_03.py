@@ -16,6 +16,7 @@ print('Задача 16', '=' * 40)
 def get_random_array(array_len):
     return [random.randint(0, 10) for x in range(array_len)]
 
+
 def get_number_from_console(message):
     check_input = False
     string_number = ''
